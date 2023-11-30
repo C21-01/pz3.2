@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Практичне завдання з JavaScript та DOM</title>
+</head>
+<body>
+    <h1 id="centeredTitle">Your leisure guide</h1>
+    <p id="myParagraph" class="highlighted">Це абзац з id та класом.</p>
+    <div>
+        <ul>
+            <li>moovie</li>
+            <li>music</li>
+            <li>books</li>
+        </ul>
+    </div>
+    <a id="myLink" href="https://send.monobank.ua/jar/7KvT6AGGib">COFFE AS A GIFT</a>
+
+    <script>
+        // Завдання 1: Змінити стиль та текст абзацу
+        var paragraph = document.getElementById("myParagraph");
+        paragraph.style.color = "red";
+        paragraph.textContent = "HOW TO SPEND WINTER HOLIDAYS";
+
+        // Завдання 2: Вивести інформацію про структуру
+        var ul = document.querySelector("ul");
+        console.log("ul є дочірнім елементом div: " + ul.parentElement.tagName);
+
+        // Завдання 3: Додати обробник подій
+        var link = document.getElementById("myLink");
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            alert("Ви натиснули на посилання!");
+        });
+
+        // Завдання 4: Центрування заголовка
+        var title = document.getElementById("centeredTitle");
+        title.style.textAlign = "center";
+
+        // Завдання 5: Навігація до батьківського елемента
+        var ulParent = ul.parentElement;
+        console.log("Батьківський елемент ul: " + ulParent.tagName);
+
+        // Завдання 6: Навігація до дочірніх елементів
+        var ulChildren = ul.getElementsByTagName("li");
+        for (var i = 0; i < ulChildren.length; i++) {
+            console.log("Дочірній елемент li #" + (i + 1) + ": " + ulChildren[i].textContent);
+        }
+
+        // Змінити фонові кольори за допомогою JavaScript
+        document.body.style.backgroundColor = "#00ff00"; // Зелений фон для body
+        paragraph.style.backgroundColor = "#0000ff"; // Синій фон для абзацу
+        ul.style.backgroundColor = "#ff0000"; // Червоний фон для списку ul
+    </script>
+</body>
+</html>
